@@ -2154,7 +2154,11 @@ func NewPopulatedAllMaps(r randyMapsproto2, easy bool) *AllMaps {
 		v33 := r.Intn(10)
 		this.StringToMsgMap = make(map[string]*FloatingPoint)
 		for i := 0; i < v33; i++ {
-			this.StringToMsgMap[randStringMapsproto2(r)] = NewPopulatedFloatingPoint(r, easy)
+			if r.Intn(10) != 0 {
+				this.StringToMsgMap[randStringMapsproto2(r)] = NewPopulatedFloatingPoint(r, easy)
+			} else {
+				this.StringToMsgMap[randStringMapsproto2(r)] = nil
+			}
 		}
 	}
 	if !easy && r.Intn(10) != 0 {

@@ -238,11 +238,17 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 			keyval = value(keytypName, mapkey.GetType())
 		}
 		if mapvalue.IsMessage() || p.IsGroup(field) {
-			s := `this.` + fieldname + `[` + keyval + `]` + ` = `
 			goTypName := generator.GoTypeToName(valuegoTyp)
 			funcCall := getFuncCall(goTypName)
-			s += funcCall
-			p.P(s)
+			p.P(`if r.Intn(10) != 0 {`)
+			p.In()
+			p.P(`this.` + fieldname + `[` + keyval + `]` + ` = ` + funcCall)
+			p.Out()
+			p.P(`} else {`)
+			p.In()
+			p.P(`this.` + fieldname + `[` + keyval + `]` + ` = nil`)
+			p.Out()
+			p.P(`}`)
 		} else if mapvalue.IsEnum() {
 			s := `this.` + fieldname + `[` + keyval + `]` + ` = ` + p.getEnumVal(mapvalue, valuegoTyp)
 			p.P(s)

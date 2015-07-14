@@ -755,7 +755,11 @@ func NewPopulatedMessage(r randyTheproto3, easy bool) *Message {
 		v3 := r.Intn(10)
 		this.Terrain = make(map[int64]*Nested)
 		for i := 0; i < v3; i++ {
-			this.Terrain[int64(r.Int63())] = NewPopulatedNested(r, easy)
+			if r.Intn(10) != 0 {
+				this.Terrain[int64(r.Int63())] = NewPopulatedNested(r, easy)
+			} else {
+				this.Terrain[int64(r.Int63())] = nil
+			}
 		}
 	}
 	if r.Intn(10) != 0 {
@@ -765,7 +769,11 @@ func NewPopulatedMessage(r randyTheproto3, easy bool) *Message {
 		v4 := r.Intn(10)
 		this.Proto2Value = make(map[int64]*test.NinOptEnum)
 		for i := 0; i < v4; i++ {
-			this.Proto2Value[int64(r.Int63())] = test.NewPopulatedNinOptEnum(r, easy)
+			if r.Intn(10) != 0 {
+				this.Proto2Value[int64(r.Int63())] = test.NewPopulatedNinOptEnum(r, easy)
+			} else {
+				this.Proto2Value[int64(r.Int63())] = nil
+			}
 		}
 	}
 	if !easy && r.Intn(10) != 0 {
@@ -941,7 +949,11 @@ func NewPopulatedAllMaps(r randyTheproto3, easy bool) *AllMaps {
 		v36 := r.Intn(10)
 		this.StringToMsgMap = make(map[string]*FloatingPoint)
 		for i := 0; i < v36; i++ {
-			this.StringToMsgMap[randStringTheproto3(r)] = NewPopulatedFloatingPoint(r, easy)
+			if r.Intn(10) != 0 {
+				this.StringToMsgMap[randStringTheproto3(r)] = NewPopulatedFloatingPoint(r, easy)
+			} else {
+				this.StringToMsgMap[randStringTheproto3(r)] = nil
+			}
 		}
 	}
 	if !easy && r.Intn(10) != 0 {
@@ -962,7 +974,11 @@ func NewPopulatedMessageWithMap(r randyTheproto3, easy bool) *MessageWithMap {
 		v38 := r.Intn(10)
 		this.MsgMapping = make(map[int64]*FloatingPoint)
 		for i := 0; i < v38; i++ {
-			this.MsgMapping[int64(r.Int63())] = NewPopulatedFloatingPoint(r, easy)
+			if r.Intn(10) != 0 {
+				this.MsgMapping[int64(r.Int63())] = NewPopulatedFloatingPoint(r, easy)
+			} else {
+				this.MsgMapping[int64(r.Int63())] = nil
+			}
 		}
 	}
 	if r.Intn(10) != 0 {
