@@ -1198,7 +1198,7 @@ func (g *Generator) generateImports() {
 	// reference it later. The same argument applies to the math package,
 	// for handling bit patterns for floating-point numbers.
 	if gogoproto.ImportsGoGoProto(g.file.FileDescriptorProto) {
-		g.PrintImport(g.Pkg["proto"], g.ImportPrefix+"github.com/gogo/protobuf/proto")
+		g.PrintImport(g.Pkg["proto"], g.ImportPrefix+"github.com/pixty/gogoprotobuf/proto")
 	} else {
 		g.PrintImport(g.Pkg["proto"], g.ImportPrefix+"github.com/golang/protobuf/proto")
 	}
@@ -1232,8 +1232,8 @@ func (g *Generator) generateImports() {
 				if dir == "google/protobuf" && strings.HasSuffix(filename, "descriptor.pb") {
 					// This allows protos to import a single google/protobuf/descriptor.proto so as not to cause conflicts with C++ or other code generators.
 					// Also this allows the go generated descriptor to live inside the gogoprotobuf package
-					dir = "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-					g.P("// renamed import google/protobuf/descriptor to github.com/gogo/protobuf/protoc-gen-gogo/descriptor")
+					dir = "github.com/pixty/gogoprotobuf/protoc-gen-gogo/descriptor"
+					g.P("// renamed import google/protobuf/descriptor to github.com/pixty/gogoprotobuf/protoc-gen-gogo/descriptor")
 				}
 				g.PrintImport(fd.PackageName(), dir)
 			} else {
