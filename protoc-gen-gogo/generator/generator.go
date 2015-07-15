@@ -1000,6 +1000,7 @@ func (g *Generator) P(str ...interface{}) {
 }
 
 func (g *Generator) PrintImport(alias, pkg string) {
+	log.Println("PrintImport", alias, pkg)
 	statement := "import " + alias + " " + strconv.Quote(pkg)
 	if g.writtenImports[statement] {
 		return
@@ -1205,6 +1206,7 @@ func (g *Generator) generateImports() {
 		g.PrintImport(g.Pkg["math"], "math")
 	}
 	for i, s := range g.file.Dependency {
+		log.Println("Dependency", i, s)
 		fd := g.fileByName(s)
 		// Do not import our own package.
 		if fd.PackageName() == g.packageName {
