@@ -445,6 +445,7 @@ type Generator struct {
 	PackageImportPath string            // Go import path of the package we're generating code for
 	ImportPrefix      string            // String to prefix to imported package file names.
 	ImportMap         map[string]string // Mapping from import name to generated name
+	ProjectPath       string            // Path to the project root relative to $GOPATH/src
 
 	Pkg map[string]string // The names under which we import support packages
 
@@ -504,6 +505,8 @@ func (g *Generator) CommandLineParameters(parameter string) {
 		switch k {
 		case "import_prefix":
 			g.ImportPrefix = v
+		case "project_path":
+			g.ProjectPath = v
 		case "import_path":
 			g.PackageImportPath = v
 		case "plugins":
@@ -1211,7 +1214,7 @@ func (g *Generator) generateImports() {
 		if substitution, ok := g.ImportMap[s]; ok {
 			filename = substitution
 		}
-		filename = g.ImportPrefix + filename
+		filename = g.ImportPrefix + g.ProjectPath + filename
 		if strings.HasSuffix(filename, ".go") {
 			filename = filename[0 : len(filename)-3]
 		}
