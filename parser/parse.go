@@ -1,7 +1,7 @@
 // Extensions for Protocol Buffers to create more go like structures.
 //
 // Copyright (c) 2013, Vastech SA (PTY) LTD. All rights reserved.
-// http://github.com/gogo/protobuf/gogoproto
+// http://github.com/pixty/gogoprotobuf/gogoproto
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -29,8 +29,8 @@
 package parser
 
 import (
-	"github.com/gogo/protobuf/proto"
-	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
+	"github.com/pixty/gogoprotobuf/proto"
+	descriptor "github.com/pixty/gogoprotobuf/protoc-gen-gogo/descriptor"
 	"os/exec"
 	"strings"
 )

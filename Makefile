@@ -1,7 +1,7 @@
 # Extensions for Protocol Buffers to create more go like structures.
 #
 # Copyright (c) 2013, Vastech SA (PTY) LTD. All rights reserved.
-# http://github.com/gogo/protobuf/gogoproto
+# http://github.com/pixty/gogoprotobuf/gogoproto
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -133,7 +133,7 @@ errcheck:
 
 drone:
 	sudo apt-get install protobuf-compiler
-	(cd $(GOPATH)/src/github.com/gogo/protobuf && make all)
+	(cd $(GOPATH)/src/github.com/pixty/gogoprotobuf && make all)
 
 testall:
 	make -C protoc-gen-gogo/testdata test

@@ -13,7 +13,7 @@ It has these top-level messages:
 */
 package vanity
 
-import proto "github.com/gogo/protobuf/proto"
+import proto "github.com/pixty/gogoprotobuf/proto"
 import math "math"
 
 import io "io"

@@ -13,14 +13,14 @@ It has these top-level messages:
 */
 package proto
 
-import proto1 "github.com/gogo/protobuf/proto"
+import proto1 "github.com/pixty/gogoprotobuf/proto"
 import math "math"
 
-// discarding unused import gogoproto "github.com/gogo/protobuf/gogoproto/gogo.pb"
+// discarding unused import gogoproto "github.com/pixty/gogoprotobuf/gogoproto/gogo.pb"
 
 import io "io"
 import fmt "fmt"
-import github_com_gogo_protobuf_proto "github.com/gogo/protobuf/proto"
+import github_com_gogo_protobuf_proto "github.com/pixty/gogoprotobuf/proto"
 
 import bytes "bytes"
 

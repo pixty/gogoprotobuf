@@ -13,10 +13,10 @@ It has these top-level messages:
 */
 package subpkg
 
-import proto "github.com/gogo/protobuf/proto"
+import proto "github.com/pixty/gogoprotobuf/proto"
 import math "math"
 
-// discarding unused import gogoproto "github.com/gogo/protobuf/gogoproto/gogo.pb"
+// discarding unused import gogoproto "github.com/pixty/gogoprotobuf/gogoproto/gogo.pb"
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal

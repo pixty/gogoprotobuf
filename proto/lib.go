@@ -88,7 +88,7 @@
 
 		package example
 
-		import proto "github.com/gogo/protobuf/proto"
+		import proto "github.com/pixty/gogoprotobuf/proto"
 		import math "math"
 
 		type FOO int32
@@ -176,7 +176,7 @@
 		import (
 			"log"
 
-			"github.com/gogo/protobuf/proto"
+			"github.com/pixty/gogoprotobuf/proto"
 			pb "./example.pb"
 		)
 

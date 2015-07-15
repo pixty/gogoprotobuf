@@ -1,5 +1,5 @@
 // Copyright (c) 2015, Vastech SA (PTY) LTD. All rights reserved.
-// http://github.com/gogo/protobuf/gogoproto
+// http://github.com/pixty/gogoprotobuf/gogoproto
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -27,7 +27,7 @@
 package codec
 
 import (
-	"github.com/gogo/protobuf/test"
+	"github.com/pixty/gogoprotobuf/test"
 	"math/rand"
 	"testing"
 	"time"

@@ -1,12 +1,12 @@
 # Protocol Buffers for Go with Gadgets
 
-[![Build Status](https://drone.io/github.com/gogo/protobuf/status.png)](https://drone.io/github.com/gogo/protobuf/latest)
+[![Build Status](https://drone.io/github.com/pixty/gogoprotobuf/status.png)](https://drone.io/github.com/pixty/gogoprotobuf/latest)
 
 ### Getting Started (Give me the speed I don't care about the rest)
 
 Install the protoc-gen-gofast binary
 
-    go get github.com/gogo/protobuf/protoc-gen-gofast
+    go get github.com/pixty/gogoprotobuf/protoc-gen-gofast
 
 Use it to generate faster marshaling and unmarshaling go code for you protocol buffers.
 
@@ -32,9 +32,9 @@ Next, install the standard protocol buffer implementation from [https://github.c
 
 Finally run:
 
-    go get github.com/gogo/protobuf/proto
-    go get github.com/gogo/protobuf/protoc-gen-gogo
-    go get github.com/gogo/protobuf/gogoproto
+    go get github.com/pixty/gogoprotobuf/proto
+    go get github.com/pixty/gogoprotobuf/protoc-gen-gogo
+    go get github.com/pixty/gogoprotobuf/gogoproto
 
 ### Proto3
 

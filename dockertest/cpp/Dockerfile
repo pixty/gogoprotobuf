@@ -43,7 +43,7 @@ ENV PATH $PATH:$GOPATH/bin:$GOROOT/bin
 #setup paths for my repositories
 RUN mkdir -p $GOPATH/src/github.com/gogo
 RUN mkdir -p $GOPATH/src/github.com/golang
-ENV GOGOPROTOPATH $GOPATH/src/github.com/gogo/protobuf
+ENV GOGOPROTOPATH $GOPATH/src/github.com/pixty/gogoprotobuf
 ENV GOGOTESTPATH $GOPATH/src/github.com/gogo/harmonytests
 ENV GOPROTOPATH $GOPATH/src/github.com/golang/protobuf
 
@@ -52,24 +52,24 @@ RUN echo '#!/bin/bash' >> /test.sh
 RUN echo 'set -xe' >> /test.sh
 RUN echo 'go version' >> /test.sh
 RUN echo 'protoc --version || true' >> /test.sh
-RUN echo 'git clone https://github.com/gogo/protobuf $GOGOPROTOPATH' >> /test.sh
+RUN echo 'git clone https://github.com/pixty/gogoprotobuf $GOGOPROTOPATH' >> /test.sh
 RUN echo 'cd $GOGOPROTOPATH' >> /test.sh
 RUN echo 'make' >> /test.sh
 
 RUN echo '#build cpp the same as go' >> /test.sh
 RUN echo 'cd $GOPATH/src' >> /test.sh
-RUN echo 'protoc -I=.:./github.com/gogo/protobuf/protobuf/ --cpp_out=. ./github.com/gogo/protobuf/gogoproto/gogo.proto' >> /test.sh
-RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/gogo/protobuf/gogoproto/gogo.pb.o $GOPATH/src/github.com/gogo/protobuf/gogoproto/gogo.pb.cc' >> /test.sh
-RUN echo 'protoc -I=.:./github.com/gogo/protobuf/protobuf/ --cpp_out=. ./github.com/gogo/protobuf/test/example/example.proto' >> /test.sh
-RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/gogo/protobuf/test/example/example.pb.o $GOPATH/src/github.com/gogo/protobuf/test/example/example.pb.cc' >> /test.sh
+RUN echo 'protoc -I=.:./github.com/pixty/gogoprotobuf/protobuf/ --cpp_out=. ./github.com/pixty/gogoprotobuf/gogoproto/gogo.proto' >> /test.sh
+RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/pixty/gogoprotobuf/gogoproto/gogo.pb.o $GOPATH/src/github.com/pixty/gogoprotobuf/gogoproto/gogo.pb.cc' >> /test.sh
+RUN echo 'protoc -I=.:./github.com/pixty/gogoprotobuf/protobuf/ --cpp_out=. ./github.com/pixty/gogoprotobuf/test/example/example.proto' >> /test.sh
+RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/pixty/gogoprotobuf/test/example/example.pb.o $GOPATH/src/github.com/pixty/gogoprotobuf/test/example/example.pb.cc' >> /test.sh
 
 RUN echo '#cpp will probably have the google folder with the descriptors in the right place, since it will have protoc cpp code available.' >> /test.sh
 RUN echo '#This simulates that by moving our google folder and then running protoc see without the extra path.' >> /test.sh
-RUN echo 'mv ./github.com/gogo/protobuf/protobuf/google .' >> /test.sh
-RUN echo 'protoc -I=. --cpp_out=. ./github.com/gogo/protobuf/gogoproto/gogo.proto' >> /test.sh
-RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/gogo/protobuf/gogoproto/gogo.pb.o $GOPATH/src/github.com/gogo/protobuf/gogoproto/gogo.pb.cc' >> /test.sh
-RUN echo 'protoc -I=. --cpp_out=. ./github.com/gogo/protobuf/test/example/example.proto' >> /test.sh
-RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/gogo/protobuf/test/example/example.pb.o $GOPATH/src/github.com/gogo/protobuf/test/example/example.pb.cc' >> /test.sh
+RUN echo 'mv ./github.com/pixty/gogoprotobuf/protobuf/google .' >> /test.sh
+RUN echo 'protoc -I=. --cpp_out=. ./github.com/pixty/gogoprotobuf/gogoproto/gogo.proto' >> /test.sh
+RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/pixty/gogoprotobuf/gogoproto/gogo.pb.o $GOPATH/src/github.com/pixty/gogoprotobuf/gogoproto/gogo.pb.cc' >> /test.sh
+RUN echo 'protoc -I=. --cpp_out=. ./github.com/pixty/gogoprotobuf/test/example/example.proto' >> /test.sh
+RUN echo 'g++ -I$GOPATH/src -c -o $GOPATH/src/github.com/pixty/gogoprotobuf/test/example/example.pb.o $GOPATH/src/github.com/pixty/gogoprotobuf/test/example/example.pb.cc' >> /test.sh
 
 RUN chmod +x /test.sh
 

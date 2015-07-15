@@ -1,7 +1,7 @@
 // Extensions for Protocol Buffers to create more go like structures.
 //
 // Copyright (c) 2013, Vastech SA (PTY) LTD. All rights reserved.
-// http://github.com/gogo/protobuf/gogoproto
+// http://github.com/pixty/gogoprotobuf/gogoproto
 //
 // Go support for Protocol Buffers - Google's data interchange format
 //
@@ -55,10 +55,10 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/gogo/protobuf/gogoproto"
-	"github.com/gogo/protobuf/proto"
-	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	plugin "github.com/gogo/protobuf/protoc-gen-gogo/plugin"
+	"github.com/pixty/gogoprotobuf/gogoproto"
+	"github.com/pixty/gogoprotobuf/proto"
+	descriptor "github.com/pixty/gogoprotobuf/protoc-gen-gogo/descriptor"
+	plugin "github.com/pixty/gogoprotobuf/protoc-gen-gogo/plugin"
 )
 
 // A Plugin provides functionality to add to the output during Go code generation,

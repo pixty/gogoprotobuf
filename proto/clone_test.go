@@ -34,9 +34,9 @@ package proto_test
 import (
 	"testing"
 
-	"github.com/gogo/protobuf/proto"
+	"github.com/pixty/gogoprotobuf/proto"
 
-	pb "github.com/gogo/protobuf/proto/testdata"
+	pb "github.com/pixty/gogoprotobuf/proto/testdata"
 )
 
 var cloneTestMessage = &pb.MyMessage{

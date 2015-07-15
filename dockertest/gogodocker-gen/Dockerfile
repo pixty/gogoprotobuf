@@ -44,7 +44,7 @@ ENV PATH $PATH:$GOPATH/bin:$GOROOT/bin
 #setup paths for my repositories
 RUN mkdir -p $GOPATH/src/github.com/gogo
 RUN mkdir -p $GOPATH/src/github.com/golang
-ENV GOGOPROTOPATH $GOPATH/src/github.com/gogo/protobuf
+ENV GOGOPROTOPATH $GOPATH/src/github.com/pixty/gogoprotobuf
 ENV GOGOTESTPATH $GOPATH/src/github.com/gogo/harmonytests
 ENV GOPROTOPATH $GOPATH/src/github.com/golang/protobuf
 
@@ -53,7 +53,7 @@ RUN echo '#!/bin/bash' >> /test.sh
 RUN echo 'set -xe' >> /test.sh
 RUN echo 'go version' >> /test.sh
 RUN echo 'protoc --version || true' >> /test.sh
-RUN echo 'git clone https://github.com/gogo/protobuf $GOGOPROTOPATH' >> /test.sh
+RUN echo 'git clone https://github.com/pixty/gogoprotobuf $GOGOPROTOPATH' >> /test.sh
 RUN echo 'cd $GOGOPROTOPATH' >> /test.sh
 RUN echo 'make all' >> /test.sh
 

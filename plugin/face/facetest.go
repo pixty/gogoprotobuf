@@ -1,5 +1,5 @@
 // Copyright (c) 2013, Vastech SA (PTY) LTD. All rights reserved.
-// http://github.com/gogo/protobuf
+// http://github.com/pixty/gogoprotobuf
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -27,9 +27,9 @@
 package face
 
 import (
-	"github.com/gogo/protobuf/gogoproto"
-	"github.com/gogo/protobuf/plugin/testgen"
-	"github.com/gogo/protobuf/protoc-gen-gogo/generator"
+	"github.com/pixty/gogoprotobuf/gogoproto"
+	"github.com/pixty/gogoprotobuf/plugin/testgen"
+	"github.com/pixty/gogoprotobuf/protoc-gen-gogo/generator"
 )
 
 type test struct {
