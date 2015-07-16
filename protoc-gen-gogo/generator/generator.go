@@ -1684,7 +1684,10 @@ func (g *Generator) generateMessage(message *Descriptor) {
 		fieldGetterName := fieldName
 		usedNames[fieldName] = true
 		typename, wiretype := g.GoType(message, field)
-		jsonName := *field.Name
+		jsonName := CamelCase(*field.Name)
+		if len(jsonName) > 0 {
+			jsonName = strings.ToLower(jsonName[0:1]) + jsonName[1:]
+		}
 		jsonTag := jsonName + ",omitempty"
 		if !gogoproto.IsNullable(field) {
 			jsonTag = jsonName
